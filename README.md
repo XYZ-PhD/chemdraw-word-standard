@@ -38,3 +38,7 @@ python -B -m unittest discover -s scripts -p "test_*.py" -v
 纯 Python 检查脚本使用 Python 3.10 及以上版本的标准库。本版的 79 项回归测试已通过。`geometry-negative-control` 以及编号、产率对调示例是故意设置的反例，仅用于测试；示例中的编号和产率均为格式测试数据。
 
 没有 ChemDraw 和 Word 时，只能交付候选 CDXML 等阶段成果；验证原生结构需要可用的 ChemDraw，制作并验收可编辑 Word OLE 对象还需要 Microsoft Word。Windows 自动化流程已在 ChemDraw 25.0.2.14 与 Word 16.0.14334 上实测；其他版本应自行验证。此 skill 不包含这些商业软件。
+
+## 2.1.0 发布证据
+
+[下载 2.1.0 发布证据包](chemdraw-word-standard-2.1.0-release-evidence.zip)。证据包包含迁移记录和测试结果，不包含 2.1.0 安装包；上方提供的安装包仍为 2.0.0。
