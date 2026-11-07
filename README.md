@@ -1,6 +1,6 @@
 # ChemDraw 与 Word 基础绘图标准
 
-这是一个用于绘制、返修和检查可编辑 ChemDraw 结构及 Word 图稿的 Codex skill。当前版本为 **2.0.0**。
+这是一个用于绘制、返修和检查可编辑 ChemDraw 结构及 Word 图稿的 Codex skill。当前版本为 **2.1.0**。
 
 它涵盖普通键长、二维键角、原生字体、编号与产率、甲基表示、图间显示尺度，以及 Word 中 ChemDraw OLE 对象的验证。
 
@@ -14,8 +14,14 @@
 本版本 ZIP 的 SHA-256：
 
 ```text
-09379c6acc8a3ed4fcc4009bd0c132bf13453d76e1b51ff3c4169f0bbbc7400c
+ced82cbc5e3a5796c9508ed67dc026f556640715e715100d54ddde09a09692fd
 ```
+
+## 2.1.0 更新
+
+- 修复部分文档换行与文件清单的兼容性问题；文档哈希按规范化换行校验。
+- 完善空白图检查，增加角色表草稿和近似 SVG 预览；角色表需人工确认，预览并非 ChemDraw 原生渲染。
+- 整理快速路径、证据说明和显示校准文档。完整变更见安装包中的 `CHANGELOG.md`。
 
 ## 2.0.0 更新
 
@@ -35,10 +41,10 @@ python -B scripts/verify_manifest.py .
 python -B -m unittest discover -s scripts -p "test_*.py" -v
 ```
 
-纯 Python 检查脚本使用 Python 3.10 及以上版本的标准库。本版的 79 项回归测试已通过。`geometry-negative-control` 以及编号、产率对调示例是故意设置的反例，仅用于测试；示例中的编号和产率均为格式测试数据。
+纯 Python 检查脚本使用 Python 3.10 及以上版本的标准库。本版的 88 项 Python 回归测试已通过。`geometry-negative-control` 以及编号、产率对调示例是故意设置的反例，仅用于测试；示例中的编号和产率均为格式测试数据。
 
-没有 ChemDraw 和 Word 时，只能交付候选 CDXML 等阶段成果；验证原生结构需要可用的 ChemDraw，制作并验收可编辑 Word OLE 对象还需要 Microsoft Word。Windows 自动化流程已在 ChemDraw 25.0.2.14 与 Word 16.0.14334 上实测；其他版本应自行验证。此 skill 不包含这些商业软件。
+没有 ChemDraw 和 Word 时，只能交付候选 CDXML 等阶段成果；验证原生结构需要可用的 ChemDraw，制作并验收可编辑 Word OLE 对象还需要 Microsoft Word。2.0.0 的 Windows 自动化流程曾在 ChemDraw 25.0.2.14 与 Word 16.0.14334 上实测；2.1.0 未重新运行 Windows 原生集成测试，其他环境也应自行验证。此 skill 不包含这些商业软件。
 
 ## 2.1.0 发布证据
 
-[下载 2.1.0 发布证据包](chemdraw-word-standard-2.1.0-release-evidence.zip)。证据包包含迁移记录和测试结果，不包含 2.1.0 安装包；上方提供的安装包仍为 2.0.0。
+[下载 2.1.0 发布证据包](chemdraw-word-standard-2.1.0-release-evidence.zip)。证据包包含迁移记录和测试结果，安装包请从上方下载。
